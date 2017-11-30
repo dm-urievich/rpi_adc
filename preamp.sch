@@ -16494,6 +16494,29 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="21"/>
 <rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="21"/>
 </package>
+<package name="10X05MTA">
+<description>&lt;b&gt;AMP MTA connector&lt;/b&gt;&lt;p&gt;
+Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
+<wire x1="-6.35" y1="-1.27" x2="-6.35" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="1.27" x2="-6.35" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="1.27" x2="6.35" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="-1.27" x2="6.35" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="1.27" x2="-6.35" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="1.905" x2="-6.35" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="1.905" x2="6.35" y2="1.27" width="0.1524" layer="21"/>
+<pad name="5" x="-5.08" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="4" x="-2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="1" x="5.08" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-2.6162" y="-3.2512" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.1763" y="2.1509" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="21"/>
+<rectangle x1="-2.794" y1="-0.254" x2="-2.286" y2="0.254" layer="21"/>
+<rectangle x1="-5.334" y1="-0.254" x2="-4.826" y2="0.254" layer="21"/>
+<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="21"/>
+<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MTA-1_2">
@@ -16540,6 +16563,25 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <pin name="2" x="0" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="3" x="2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="4" x="5.08" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+</symbol>
+<symbol name="MTA-1_5">
+<wire x1="-6.35" y1="1.27" x2="-6.35" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-1.905" x2="-6.35" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-1.905" x2="6.35" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="1.27" x2="6.35" y2="1.27" width="0.254" layer="94"/>
+<circle x="-5.08" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="-2.54" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="2.54" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="5.08" y="0" radius="0.635" width="0.254" layer="94"/>
+<text x="7.62" y="0" size="1.778" layer="95">&gt;NAME</text>
+<text x="7.62" y="-3.81" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-7.62" y="-1.27" size="1.27" layer="95">1</text>
+<pin name="1" x="-5.08" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="2" x="-2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="3" x="0" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="4" x="2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="5" x="5.08" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -16590,6 +16632,26 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="3" pad="3"/>
 <connect gate="G$1" pin="4" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MTA05-100" prefix="J" uservalue="yes">
+<description>&lt;b&gt;AMP connector&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="MTA-1_5" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="10X05MTA">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -17065,7 +17127,6 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <part name="R8" library="rcl" deviceset="R-EU_" device="R0805" value="0"/>
 <part name="IC4" library="rpiadc" deviceset="KXO-97" device="" value="12.288MHz"/>
 <part name="C18" library="rcl" deviceset="C-EU" device="C0805" value="0.1"/>
-<part name="J7" library="con-amp" deviceset="MTA04-100" device=""/>
 <part name="C19" library="rcl" deviceset="C-EU" device="C0805" value="0.1"/>
 <part name="R12" library="rcl" deviceset="R-EU_" device="R0805" value="1k"/>
 <part name="R14" library="rcl" deviceset="R-EU_" device="R0805" value="1k"/>
@@ -17101,6 +17162,9 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <part name="C30" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
 <part name="C31" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
 <part name="R17" library="rcl" deviceset="R-EU_" device="R0805" value="0"/>
+<part name="R13" library="rcl" deviceset="R-EU_" device="R0805" value="0"/>
+<part name="J10" library="con-amp" deviceset="MTA05-100" device=""/>
+<part name="GND6" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17110,6 +17174,32 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 3) по пути от источника поставить smd штыри, пусть будут площадки для проверки
 4) резистор отвечающий за усиление, оставить ему место на разводке чтобы можно было подбирать
 5) усилители сделать с возможностью отеделения, блок питания так же</text>
+<text x="-30.48" y="81.28" size="1.778" layer="91">GND</text>
+<text x="-30.48" y="83.82" size="1.778" layer="91">INL</text>
+<text x="-30.48" y="78.74" size="1.778" layer="91">INR</text>
+<text x="160.02" y="78.74" size="1.778" layer="91">GND</text>
+<text x="160.02" y="81.28" size="1.778" layer="91">OUT</text>
+<text x="160.02" y="76.2" size="1.778" layer="91">REF</text>
+<text x="116.84" y="116.84" size="1.778" layer="91">GND</text>
+<text x="116.84" y="119.38" size="1.778" layer="91">V+</text>
+<text x="116.84" y="119.38" size="1.778" layer="91">V+</text>
+<text x="116.84" y="114.3" size="1.778" layer="91">V-</text>
+<text x="215.9" y="160.02" size="1.778" layer="91">GND</text>
+<text x="215.9" y="162.56" size="1.778" layer="91">5V</text>
+<text x="213.36" y="96.52" size="1.778" layer="91">REF</text>
+<text x="213.36" y="93.98" size="1.778" layer="91">GND</text>
+<text x="213.36" y="99.06" size="1.778" layer="91">INL</text>
+<text x="213.36" y="101.6" size="1.778" layer="91">INR</text>
+<text x="350.52" y="99.06" size="1.778" layer="91">SCKI</text>
+<text x="350.52" y="101.6" size="1.778" layer="91">LRCK</text>
+<text x="350.52" y="96.52" size="1.778" layer="91">BCK</text>
+<text x="350.52" y="93.98" size="1.778" layer="91">DOUT</text>
+<text x="350.52" y="104.14" size="1.778" layer="91">GND</text>
+<text x="124.46" y="195.58" size="1.778" layer="91">GND</text>
+<text x="124.46" y="198.12" size="1.778" layer="91">V+</text>
+<text x="124.46" y="193.04" size="1.778" layer="91">V-</text>
+<text x="-30.48" y="195.58" size="1.778" layer="91">GND</text>
+<text x="-30.48" y="198.12" size="1.778" layer="91">5V</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="91.44" y="81.28"/>
@@ -17180,7 +17270,6 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <instance part="R8" gate="G$1" x="251.46" y="91.44" rot="R180"/>
 <instance part="IC4" gate="G$1" x="307.34" y="132.08"/>
 <instance part="C18" gate="G$1" x="284.48" y="132.08"/>
-<instance part="J7" gate="G$1" x="347.98" y="99.06" rot="R270"/>
 <instance part="C19" gate="G$1" x="147.32" y="33.02" rot="R180"/>
 <instance part="R12" gate="G$1" x="269.24" y="25.4" rot="R90"/>
 <instance part="R14" gate="G$1" x="289.56" y="25.4" rot="R90"/>
@@ -17216,6 +17305,9 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <instance part="C30" gate="G$1" x="236.22" y="165.1"/>
 <instance part="C31" gate="G$1" x="368.3" y="78.74"/>
 <instance part="R17" gate="G$1" x="370.84" y="63.5" rot="R180"/>
+<instance part="R13" gate="G$1" x="152.4" y="53.34" rot="R90"/>
+<instance part="J10" gate="G$1" x="347.98" y="99.06" rot="R270"/>
+<instance part="GND6" gate="1" x="337.82" y="109.22"/>
 </instances>
 <busses>
 </busses>
@@ -17261,16 +17353,14 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <net name="N$5" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="22.86" y1="86.36" x2="-10.16" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="86.36" x2="-15.24" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="93.98" x2="22.86" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="+"/>
 <wire x1="30.48" y1="86.36" x2="22.86" y2="86.36" width="0.1524" layer="91"/>
 <junction x="22.86" y="86.36"/>
-<wire x1="-10.16" y1="83.82" x2="-10.16" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="J2" gate="G$1" pin="1"/>
 <wire x1="-20.32" y1="78.74" x2="-15.24" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="78.74" x2="-15.24" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="83.82" x2="-10.16" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="78.74" x2="-15.24" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -17281,13 +17371,11 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <pinref part="C5" gate="G$1" pin="+"/>
 <wire x1="15.24" y1="73.66" x2="30.48" y2="73.66" width="0.1524" layer="91"/>
 <junction x="15.24" y="73.66"/>
-<wire x1="-10.16" y1="78.74" x2="-10.16" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="-10.16" y1="78.74" x2="-7.62" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="J2" gate="G$1" pin="3"/>
 <wire x1="-20.32" y1="83.82" x2="-17.78" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="-17.78" y1="83.82" x2="-17.78" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-17.78" y1="88.9" x2="-7.62" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="88.9" x2="-7.62" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="88.9" x2="-10.16" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="88.9" x2="-10.16" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -17623,11 +17711,10 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="139.7" y1="43.18" x2="147.32" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="43.18" x2="147.32" y2="38.1" width="0.1524" layer="91"/>
 <junction x="139.7" y="43.18"/>
-<wire x1="152.4" y1="76.2" x2="152.4" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="43.18" x2="147.32" y2="43.18" width="0.1524" layer="91"/>
 <junction x="147.32" y="43.18"/>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="154.94" y1="76.2" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="152.4" y1="43.18" x2="152.4" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -17638,11 +17725,11 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <pinref part="IC4" gate="G$1" pin="OUT"/>
 <wire x1="332.74" y1="104.14" x2="332.74" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="332.74" y1="132.08" x2="320.04" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="104.14" x2="332.74" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="340.36" y1="104.14" x2="332.74" y2="104.14" width="0.1524" layer="91"/>
 <junction x="332.74" y="104.14"/>
-<wire x1="342.9" y1="104.14" x2="342.9" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="J7" gate="G$1" pin="2"/>
-<wire x1="342.9" y1="99.06" x2="345.44" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="340.36" y1="104.14" x2="340.36" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="340.36" y1="99.06" x2="345.44" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="J10" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -17651,9 +17738,9 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="327.66" y1="101.6" x2="335.28" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="335.28" y1="101.6" x2="335.28" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="335.28" y1="91.44" x2="342.9" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="J7" gate="G$1" pin="4"/>
 <wire x1="345.44" y1="93.98" x2="342.9" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="342.9" y1="91.44" x2="342.9" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="J10" gate="G$1" pin="5"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -17855,6 +17942,14 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="360.68" y1="63.5" x2="365.76" y2="63.5" width="0.1524" layer="91"/>
 <junction x="360.68" y="63.5"/>
 </segment>
+<segment>
+<pinref part="GND6" gate="1" pin="GND"/>
+<wire x1="337.82" y1="111.76" x2="337.82" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="114.3" x2="342.9" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="114.3" x2="342.9" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="J10" gate="G$1" pin="1"/>
+<wire x1="342.9" y1="104.14" x2="345.44" y2="104.14" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$17" class="0">
 <segment>
@@ -17989,11 +18084,11 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="J7" gate="G$1" pin="1"/>
 <wire x1="345.44" y1="101.6" x2="337.82" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="101.6" x2="337.82" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="LRCK"/>
 <wire x1="337.82" y1="96.52" x2="327.66" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="J10" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -18001,8 +18096,8 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <pinref part="IC3" gate="G$1" pin="BCK"/>
 <wire x1="327.66" y1="93.98" x2="340.36" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="340.36" y1="93.98" x2="340.36" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="J7" gate="G$1" pin="3"/>
 <wire x1="340.36" y1="96.52" x2="345.44" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="J10" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="N$26" class="0">
@@ -18022,6 +18117,14 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <junction x="289.56" y="33.02"/>
 <wire x1="292.1" y1="60.96" x2="294.64" y2="60.96" width="0.1524" layer="91"/>
 <junction x="294.64" y="60.96"/>
+</segment>
+</net>
+<net name="N$28" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="154.94" y1="76.2" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="152.4" y1="58.42" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
