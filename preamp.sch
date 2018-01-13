@@ -17165,6 +17165,8 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <part name="R13" library="rcl" deviceset="R-EU_" device="R0805" value="0"/>
 <part name="J10" library="con-amp" deviceset="MTA05-100" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
+<part name="C32" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
+<part name="C33" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
 </parts>
 <sheets>
 <sheet>
@@ -17249,7 +17251,7 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <instance part="R10" gate="G$1" x="81.28" y="175.26" rot="R90"/>
 <instance part="P+3" gate="1" x="109.22" y="208.28"/>
 <instance part="P-6" gate="1" x="109.22" y="162.56"/>
-<instance part="AGND11" gate="VR1" x="99.06" y="180.34"/>
+<instance part="AGND11" gate="VR1" x="109.22" y="180.34"/>
 <instance part="J6" gate="G$1" x="-22.86" y="195.58" rot="R90"/>
 <instance part="C6" gate="G$1" x="73.66" y="193.04" rot="R180"/>
 <instance part="C7" gate="G$1" x="73.66" y="175.26" rot="R180"/>
@@ -17308,6 +17310,8 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <instance part="R13" gate="G$1" x="152.4" y="53.34" rot="R90"/>
 <instance part="J10" gate="G$1" x="347.98" y="99.06" rot="R270"/>
 <instance part="GND6" gate="1" x="337.82" y="109.22"/>
+<instance part="C32" gate="G$1" x="99.06" y="195.58"/>
+<instance part="C33" gate="G$1" x="99.06" y="177.8"/>
 </instances>
 <busses>
 </busses>
@@ -17506,14 +17510,15 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 </segment>
 <segment>
 <pinref part="AGND11" gate="VR1" pin="AGND"/>
-<wire x1="99.06" y1="182.88" x2="99.06" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="182.88" x2="109.22" y2="185.42" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="180.34" x2="81.28" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="185.42" x2="81.28" y2="190.5" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="185.42" x2="88.9" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="185.42" x2="99.06" y2="185.42" width="0.1524" layer="91"/>
 <pinref part="U$3" gate="IC$1" pin="GND"/>
 <pinref part="U$2" gate="G$1" pin="GND"/>
+<wire x1="99.06" y1="185.42" x2="88.9" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="185.42" x2="81.28" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="195.58" x2="58.42" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="185.42" x2="58.42" y2="175.26" width="0.1524" layer="91"/>
@@ -17541,6 +17546,11 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <junction x="45.72" y="185.42"/>
 <junction x="73.66" y="185.42"/>
 <junction x="88.9" y="185.42"/>
+<pinref part="C32" gate="G$1" pin="-"/>
+<wire x1="99.06" y1="190.5" x2="99.06" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="C33" gate="G$1" pin="+"/>
+<wire x1="99.06" y1="180.34" x2="99.06" y2="185.42" width="0.1524" layer="91"/>
+<junction x="99.06" y="185.42"/>
 </segment>
 <segment>
 <pinref part="AGND1" gate="VR1" pin="AGND"/>
@@ -17615,7 +17625,11 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="88.9" y1="198.12" x2="88.9" y2="203.2" width="0.1524" layer="91"/>
 <junction x="73.66" y="203.2"/>
 <junction x="88.9" y="203.2"/>
-<wire x1="88.9" y1="203.2" x2="109.22" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="203.2" x2="99.06" y2="203.2" width="0.1524" layer="91"/>
+<pinref part="C32" gate="G$1" pin="+"/>
+<wire x1="99.06" y1="203.2" x2="109.22" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="198.12" x2="99.06" y2="203.2" width="0.1524" layer="91"/>
+<junction x="99.06" y="203.2"/>
 </segment>
 </net>
 <net name="V-" class="0">
@@ -17674,7 +17688,11 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="88.9" y1="172.72" x2="88.9" y2="167.64" width="0.1524" layer="91"/>
 <junction x="73.66" y="167.64"/>
 <junction x="88.9" y="167.64"/>
-<wire x1="88.9" y1="167.64" x2="109.22" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="167.64" x2="99.06" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="C33" gate="G$1" pin="-"/>
+<wire x1="99.06" y1="167.64" x2="109.22" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="172.72" x2="99.06" y2="167.64" width="0.1524" layer="91"/>
+<junction x="99.06" y="167.64"/>
 </segment>
 </net>
 <net name="N$7" class="0">
