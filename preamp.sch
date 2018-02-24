@@ -17065,7 +17065,7 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0805" value="1.2k"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="2.2k"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0805" value="2.2k"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="R0805"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="R0805" value="G"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0805" value="1M"/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0805" value="0.1"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0805" value="0.1"/>
@@ -17142,7 +17142,7 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <part name="C21" library="rcl" deviceset="C-EU" device="C0805" value="0.1"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="C22" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
+<part name="C22" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="100u"/>
 <part name="C23" library="rcl" deviceset="C-EU" device="C0805" value="0.1"/>
 <part name="C24" library="rcl" deviceset="C-EU" device="C0805" value="0.1"/>
 <part name="C25" library="rcl" deviceset="CPOL-EU" device="SMCA" value="10uF"/>
@@ -17155,27 +17155,23 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V3" library="supply1" deviceset="+3V3" device=""/>
-<part name="L1" library="rcl" deviceset="L-US" device="L3225M"/>
-<part name="L2" library="rcl" deviceset="L-US" device="L3225M"/>
-<part name="C29" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
+<part name="L1" library="rcl" deviceset="L-US" device="L3225M" value="100u"/>
+<part name="L2" library="rcl" deviceset="L-US" device="L3225M" value="100u"/>
+<part name="C29" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="100u"/>
 <part name="P+10" library="supply1" deviceset="VCC" device=""/>
 <part name="C30" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
-<part name="C31" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
+<part name="C31" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="100u"/>
 <part name="R17" library="rcl" deviceset="R-EU_" device="R0805" value="0"/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="R0805" value="0"/>
 <part name="J10" library="con-amp" deviceset="MTA05-100" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="C32" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
 <part name="C33" library="rcl" deviceset="CPOL-EU" device="153CLV-0605" value="47"/>
+<part name="R16" library="rcl" deviceset="R-EU_" device="R0805" value="0"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="165.1" y="269.24" size="2.54" layer="91">1) нагрузочные резисторы для источника, потом выпаюются
-2) источники подключить через нульовые резисторы, тоже для проверки
-3) по пути от источника поставить smd штыри, пусть будут площадки для проверки
-4) резистор отвечающий за усиление, оставить ему место на разводке чтобы можно было подбирать
-5) усилители сделать с возможностью отеделения, блок питания так же</text>
 <text x="-30.48" y="81.28" size="1.778" layer="91">GND</text>
 <text x="-30.48" y="83.82" size="1.778" layer="91">INL</text>
 <text x="-30.48" y="78.74" size="1.778" layer="91">INR</text>
@@ -17202,6 +17198,15 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <text x="124.46" y="193.04" size="1.778" layer="91">V-</text>
 <text x="-30.48" y="195.58" size="1.778" layer="91">GND</text>
 <text x="-30.48" y="198.12" size="1.778" layer="91">5V</text>
+<text x="175.26" y="50.8" size="1.778" layer="91">на выход REF поставить делитель после повторитель как в дипломе
+opa184 не нужен, с повторителя сразу на ИС</text>
+<text x="111.76" y="99.06" size="1.778" layer="91">С2 и С3 перенести ближе к ИС</text>
+<text x="53.34" y="101.6" size="1.778" layer="91">G = 1 + 10000/Rg</text>
+<text x="50.8" y="109.22" size="1.778" layer="91">G = 74
+Rg = 137</text>
+<text x="68.58" y="109.22" size="1.778" layer="91">G = 104
+Rg = 97</text>
+<text x="353.06" y="55.88" size="1.778" layer="91">на плате сделать просто дорожку</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="91.44" y="81.28"/>
@@ -17224,7 +17229,7 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <instance part="AGND1" gate="VR1" x="139.7" y="20.32"/>
 <instance part="AGND2" gate="VR1" x="96.52" y="38.1"/>
 <instance part="AGND3" gate="VR1" x="96.52" y="96.52"/>
-<instance part="AGND4" gate="VR1" x="50.8" y="30.48"/>
+<instance part="AGND4" gate="VR1" x="50.8" y="10.16"/>
 <instance part="P+4" gate="1" x="106.68" y="121.92"/>
 <instance part="P+5" gate="1" x="40.64" y="114.3"/>
 <instance part="P+6" gate="1" x="127" y="30.48"/>
@@ -17312,6 +17317,7 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <instance part="GND6" gate="1" x="337.82" y="109.22"/>
 <instance part="C32" gate="G$1" x="99.06" y="195.58"/>
 <instance part="C33" gate="G$1" x="99.06" y="177.8"/>
+<instance part="R16" gate="G$1" x="50.8" y="20.32" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -17464,16 +17470,6 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="96.52" y1="43.18" x2="96.52" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<pinref part="AGND4" gate="VR1" pin="AGND"/>
-<wire x1="50.8" y1="40.64" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="38.1" x2="50.8" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="38.1" x2="55.88" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="38.1" x2="55.88" y2="40.64" width="0.1524" layer="91"/>
-<junction x="50.8" y="38.1"/>
-</segment>
-<segment>
 <pinref part="AGND3" gate="VR1" pin="AGND"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="99.06" x2="96.52" y2="101.6" width="0.1524" layer="91"/>
@@ -17567,6 +17563,11 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <pinref part="AGND6" gate="VR1" pin="AGND"/>
 <wire x1="154.94" y1="78.74" x2="147.32" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="78.74" x2="147.32" y2="71.12" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="AGND4" gate="VR1" pin="AGND"/>
+<pinref part="R16" gate="G$1" pin="1"/>
+<wire x1="50.8" y1="12.7" x2="50.8" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="V+" class="0">
@@ -17717,22 +17718,6 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="45.72" y1="167.64" x2="48.26" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="170.18" x2="45.72" y2="167.64" width="0.1524" layer="91"/>
 <junction x="45.72" y="167.64"/>
-</segment>
-</net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="IC2" gate="G$1" pin="+IN"/>
-<wire x1="137.16" y1="43.18" x2="139.7" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="R11" gate="G$1" pin="2"/>
-<wire x1="139.7" y1="38.1" x2="139.7" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="C19" gate="G$1" pin="2"/>
-<wire x1="139.7" y1="43.18" x2="147.32" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="43.18" x2="147.32" y2="38.1" width="0.1524" layer="91"/>
-<junction x="139.7" y="43.18"/>
-<wire x1="152.4" y1="43.18" x2="147.32" y2="43.18" width="0.1524" layer="91"/>
-<junction x="147.32" y="43.18"/>
-<pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="152.4" y1="43.18" x2="152.4" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -18143,6 +18128,37 @@ Source: Analog Devices .. 780914713ADD8704_0.pdf</description>
 <wire x1="154.94" y1="76.2" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="152.4" y1="58.42" x2="152.4" y2="76.2" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$29" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="50.8" y1="40.64" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="50.8" y1="38.1" x2="55.88" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="38.1" x2="55.88" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="R16" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="25.4" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
+<junction x="50.8" y="38.1"/>
+<wire x1="50.8" y1="30.48" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="30.48" x2="116.84" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="30.48" x2="116.84" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="+IN"/>
+<wire x1="137.16" y1="43.18" x2="139.7" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="139.7" y1="38.1" x2="139.7" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="2"/>
+<wire x1="139.7" y1="43.18" x2="147.32" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="43.18" x2="147.32" y2="38.1" width="0.1524" layer="91"/>
+<junction x="139.7" y="43.18"/>
+<wire x1="152.4" y1="43.18" x2="147.32" y2="43.18" width="0.1524" layer="91"/>
+<junction x="147.32" y="43.18"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="152.4" y1="43.18" x2="152.4" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="10.16" x2="152.4" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="10.16" x2="152.4" y2="43.18" width="0.1524" layer="91"/>
+<junction x="50.8" y="30.48"/>
+<junction x="152.4" y="43.18"/>
 </segment>
 </net>
 </nets>
